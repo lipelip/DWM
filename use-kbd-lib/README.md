@@ -19,4 +19,25 @@ A tout moment, tu peut savoir si un touche est enfoncée (down) à l'aide de la 
 
 	Key.isDown( Key.SPACE ); // ça te renvoit true ou false, c'est selon.
 
-	
+
+Comme tu es sympa, voici la liste complète des constantes disponibles (avec leurs valeurs), mais tu n'es pas obligé de te contenter de ces valeurs, c'est juste pour t'aider, hein.
+
+	BACKSPACE : 8,
+	TAB : 9,
+	RETURN : 13,
+	SHIFT : 16,
+	CTRL : 17,
+	ALT : 18,
+	CAPSLOCK : 20,
+	ESCAPE : 27,
+	SPACE : 32,
+	LEFT : 37,
+	UP : 38,
+	RIGHT : 39,
+	DOWN : 40,
+	COMMAND : 91
+
+##Et après ?
+
+Ben après, c'est toi qui voit. Le truc, c'est que tu peux considérer key.js comme un point de départ, tu prends ce que tu veux dedans, tu modifies ce que tu veux aussi, et à toi la gloire.
+
