@@ -10,7 +10,6 @@
 	</body>
 		
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		
 		<script>
 			
 			// 37 = arrow-left
@@ -22,22 +21,55 @@
 			// jquery
 			
 			$("body").keydown(function(event) {
-			  var kbd = event.keyCode;
-			  if(kbd == 37) { console.log("arrow left"); } 
-			  else if(kbd == 38){ console.log("arrow up"); }
-			  else if(kbd == 39){ console.log("arrow right"); }
-			  else if(kbd == 40){ console.log("arrow down"); }
-		
+			  switch(event.keyCode){
+				
+					case 37:
+						console.log("arrow left");
+						break;
+						
+					case 38:
+						console.log("arrow up");
+						break;
+						
+					case 39:
+						console.log("arrow right");
+						break;
+						
+					case 40:
+						console.log("arrow down");
+						break;
+						
+					default:
+						console.log("other key pressed");
+						
+				}
 			});
 			
 			// vanilla javascript
 			
-			document.body.onkeydown = function(event){
-	    	var kbd = event.keyCode;
-		    if(kbd == 37){ console.log("arrow left"); }
-		    else if(kbd == 38){ console.log("arrow up"); }
-			  else if(kbd == 39){ console.log("arrow right"); }
-			  else if(kbd == 40){ console.log("arrow down"); }
+			document.onkeydown = function(event){
+				switch(event.keyCode){
+				
+					case 37:
+						console.log("arrow left");
+						break;
+						
+					case 38:
+						console.log("arrow up");
+						break;
+						
+					case 39:
+						console.log("arrow right");
+						break;
+						
+					case 40:
+						console.log("arrow down");
+						break;
+						
+					default:
+						console.log("other key pressed");
+						
+				}
 			}
 			
 		</script>	
