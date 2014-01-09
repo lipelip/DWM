@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title>Simple Scroll Example</title>
+
+
+		<style type="text/css">
+
+		html {
+			height: 100%;
+		}
+		body {
+			height: 1000%;
+			background: white;
+		}
+		div#scrollPosition {
+			position: fixed;
+			top: 100px;
+			left: 0;
+			right: 0;
+			text-align: center;
+			color: black;
+			font-family: Helvetica;
+			font-weight: bold;
+			font-size: 60px;
+		}
+		
+
+		</style>
+
+	</head>
+	<body>
+		<div id="scrollPosition">0px</div>
+
+
+
+		<script type="text/javascript">
+
+		// stocker les références des éléments qu'on va manipuler
+		var div = document.getElementById("scrollPosition");
+
+		// surveiller le scroll de la page
+		window.addEventListener("scroll",function(e){
+			// obtenir la position du scroll vertical
+			var scrollY = window.pageYOffset;
+
+			// afficher cette valeur dans la div
+			div.innerHTML = scrollY + "px";
+		});
+
+		</script>
+
+	</body>
+</html>
