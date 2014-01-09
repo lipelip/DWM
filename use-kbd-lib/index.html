@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title>Key.js - usage example</title>
+
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			background-color: black;
+		}
+		div#circle {
+			border-radius: 50%;
+			background-color: white;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: -25px;
+			left: -25px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div#circle.red {
+			background-color: red;
+		}
+		</style>
+
+	</head>
+	<body>
+
+
+		<div id="circle"></div>
+
+		<script type="text/javascript" src="RequestAnimationFrame.js"></script>
+		<script type="text/javascript" src="key.js"></script>
+		<script type="text/javascript">
+			// l'objet Key est maintenant prêt et effectif,
+			// besoin de rien faire :)
+
+			// retenir la référence à l'élément à déplacer, et sa position
+			var circle = document.getElementById("circle"),
+				circleX = 0,
+				circleY = 0;
+
+			// une fonction qui vérifie les touches et déplace le cercle en fonction
+			function updateCircle(){
+				var speed = 5;
+
+				// vérifier chaque touche qu'on veut surveiller
+				if ( Key.isDown( Key.LEFT ) ) circleX -= speed;
+				if ( Key.isDown( Key.RIGHT ) ) circleX += speed;
+				if ( Key.isDown( Key.UP ) ) circleY -= speed;
+				if ( Key.isDown( Key.DOWN ) ) circleY += speed;
+
+				// la barre d'espace c'est pour clignoter
+				if ( Key.isDown( Key.SPACE ) ) circle.classList.toggle("red");
+
+				// puis on applique la position via le style de l'élément
+				circle.style.webkitTransform = 'translate(' + circleX + 'px, ' + circleY + 'px)';
+
+				// et on prend un tiquet pour la prochaine frame
+				requestAnimationFrame(updateCircle);
+			}
+
+			requestAnimationFrame(updateCircle);
+		</script>
+
+	</body>
+</html>
