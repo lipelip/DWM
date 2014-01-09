@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Audio tag</title>
+		<meta charset="UTF-8" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>
+
+			// JQUERY
+			$(document).ready(function(){
+
+				var audioplayer = document.getElementById("sound");
+				
+					$("#play").click(function(){
+					       audioplayer.play();
+					});
+					
+					$("#pause").click(function(){
+					       audioplayer.pause();
+					});
+					
+					$("#stop").click(function(){
+					       audioplayer.pause();
+					       audioplayer.currentTime = 0;
+					});
+				
+			});
+			
+			// JAVASCRIPT
+			document.addEventListener("DOMContentLoaded", function() {
+				
+				var audioplayer = document.getElementById("sound");
+				
+				document.getElementById("play").onclick = function() { 
+					audioplayer.play(); 
+				};
+				
+				document.getElementById("pause").onclick = function() { 
+					audioplayer.pause(); 
+				};
+				
+				document.getElementById("stop").onclick = function() { 
+					audioplayer.pause();
+					audioplayer.currentTime = 0; 
+				};
+				
+			});
+			
+		</script>
+	</head>
+	<body>
+	
+		<button id="play">Play</button>
+		<button id="pause">Pause</button>
+		<button id="stop">Stop</button>
+	
+		<audio id="sound" controls>
+			
+			<source src="2500.mp3" type="audio/mpeg" /> <!-- chrome safari microsoft -->
+			<source src="2500.ogg" type="audio/ogg" />	<!-- firefox opera chrome -->
+			
+		</audio>
+			
+	</body>
+</html>
