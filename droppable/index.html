@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Droppable</title>
+		<meta charset="UTF-8" />
+		
+		<style>
+		  
+		  div {
+			  background: #BADA55;
+			  border: 2px solid #fff;
+		  }
+		  
+		  #draggable { width: 100px; height: 100px; }
+		  #droppable { width: 150px; height: 150px; }
+		  
+	  </style>
+	  
+	</head>
+	<body>
+	
+		<div id="draggable">
+		  <p>Drag me to my target</p>
+		</div>
+		 
+		<div id="droppable">
+		  <p>Drop here</p>
+		</div>
+			
+			
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>	
+		<script>
+		 
+		  $(function() {
+		    $( "#draggable" ).draggable();
+		    $( "#droppable" ).droppable({
+		      drop: function() {
+		      	
+		      	console.log("dropped");
+		      
+		      }
+		    });
+		  });
+		  
+	  </script>
+	  	
+	</body>
+</html>
