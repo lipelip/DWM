@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Use the keybord</title>
+		<meta charset="UTF-8" />
+		
+	</head>
+	<body>
+			
+	</body>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		
+		<script>
+			
+			// 37 = arrow-left
+			// 38 = arrow-up
+			// 39 = arrow-right
+			// 40 = arrow-down
+			//http://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes
+			
+			// jquery
+			
+			$("body").keydown(function(event) {
+			  var kbd = event.keyCode;
+			  if(kbd == 37) { console.log("arrow left"); } 
+			  else if(kbd == 38){ console.log("arrow up"); }
+			  else if(kbd == 39){ console.log("arrow right"); }
+			  else if(kbd == 40){ console.log("arrow down"); }
+		
+			});
+			
+			// vanilla javascript
+			
+			document.body.onkeydown = function(event){
+	    	var kbd = event.keyCode;
+		    if(kbd == 37){ console.log("arrow left"); }
+		    else if(kbd == 38){ console.log("arrow up"); }
+			  else if(kbd == 39){ console.log("arrow right"); }
+			  else if(kbd == 40){ console.log("arrow down"); }
+			}
+			
+		</script>	
+</html>

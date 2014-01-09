@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Height width view port</title>
+		<meta charset="UTF-8" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script>
+		
+			//jquery
+			
+			$(document).ready(function(){
+  
+				var ecranHeight = $(window).height(),
+						ecranWidth = $(window).width();
+				
+				$("section").height(ecranHeight).width(ecranWidth);
+				$("div").width(ecranWidth * $("section").length);
+			
+			});
+			
+			//javascript
+			
+			document.addEventListener("DOMContentLoaded", function() {
+				
+				var viewportWidth  = document.documentElement.clientWidth,
+					  viewportHeight = document.documentElement.clientHeight;
+					  				
+				var section = document.querySelectorAll("section");
+				for(i = 0;i < section.length; i++) {
+					section[i].style.width = viewportWidth + 'px';
+					section[i].style.height = viewportHeight + 'px';
+				}
+				
+				var div = document.querySelectorAll("div");
+				for(i = 0;i < div.length; i++) {
+					div[i].style.width = viewportWidth*2 + 'px' ;
+				}
+				
+			});
+			
+		</script>
+		
+		<style>
+			
+			body {
+				margin: 0;
+			}
+			div{
+				overflow: hidden;
+			}
+			section {
+				background: blue;
+				float: left;
+			}
+			section + section {
+				background: red;
+			}
+			
+		</style>
+		
+	</head>
+	<body>
+	
+			<div>
+				<section></section>
+				<section></section>
+			</div>
+	
+	</body>
+</html>
