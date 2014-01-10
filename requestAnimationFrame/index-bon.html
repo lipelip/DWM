@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title>Key.js - usage example</title>
+
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+		}
+		body {
+			margin: 0;
+			background-color: black;
+		}
+		div#circle {
+			border-radius: 50%;
+			background-color: white;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			top: -25px;
+			left: -25px;
+			margin: 0;
+			padding: 0;
+		}
+
+		div#circle.red {
+			background-color: red;
+		}
+		</style>
+
+	</head>
+	<body>
+
+
+		<div id="circle"></div>
+
+		<script type="text/javascript" src="RequestAnimationFrame.js"></script>
+		<script type="text/javascript">
+			
+			var circle = document.getElementById("circle"),
+				centerX = window.innerWidth / 2,
+				centerY = window.innerHeight / 2,
+				t = 0;
+
+			function updateCircle(){
+				// déplacer le cercle
+				t += 0.05;
+				circle.style.webkitTransform = 'translate(' + (centerX+Math.sin(t)*250) + 'px, ' + (centerY+Math.cos(t*0.412)*60) + 'px)';
+
+				// prendre un tiquet pour la prochaine frame
+				requestAnimationFrame(updateCircle);
+			}
+
+			requestAnimationFrame(updateCircle);
+		</script>
+
+	</body>
+</html>
