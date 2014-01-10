@@ -1,0 +1,51 @@
+<html>
+<head>
+	<title>test</title>
+	<style type="text/css">
+		body {
+			background: black;
+			color: white;
+		}
+		#target {
+			border-radius: 50%;
+			background: white;
+			width: 50px;
+			height: 50px;
+			position: absolute;
+			-webkit-transform: translate3d(0,0,0);
+			-webkit-transition: all .4s ease-out;
+			-moz-transition: all .4s ease-out;
+			-ms-transition: all .4s ease-out;
+			-o-transition: all .4s ease-out;
+			transition: all .4s ease-out;
+		}
+	</style>
+</head>
+<body>
+<div id="target"></div>
+
+<script type="text/javascript" src="AnimationEvents.js"></script>
+<script type="text/javascript">
+(function(){
+	var target = document.getElementById("target");
+	
+	target.addEventListener( TRANSITION_END, onTransitionEnd, false );
+	document.addEventListener("mousedown",onMouseDown,false);
+
+	function onMouseDown(e){
+		// when using two different properties, you get two callbacks :(
+		//target.style.left = (e.pageX-25)+"px";
+		//target.style.top = (e.pageY-25)+"px";
+
+		// so let's use transforms instead !
+		target.style.webkitTransform = "translate3d("+(e.pageX-25)+"px, "+(e.pageY-25)+"px, 0 )";
+	}
+
+	function onTransitionEnd(e){
+		alert("transition end");
+	}
+
+})();
+</script>
+</body>
+</html>
