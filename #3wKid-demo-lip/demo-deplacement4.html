@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Deplacement 4</title>
+		<meta charset="UTF-8" />
+		<style>
+			
+			div {
+				width: 50px;
+				height: 50px;
+				background: #BADA55;
+				
+				position: absolute;
+				bottom: 100px;
+				left: 50px;
+				
+				transition: all .4s linear;
+			}
+			/*
+			#kedis:target {
+				-webkit-transform: translateX(100px);
+			}
+			*/
+			#kedis:checked ~ #bloc {
+				-webkit-transform: translateX(100px);
+			}
+			
+		</style>		
+	</head>
+	<body>
+	
+		<input type="radio" id="kedis" />
+	
+	
+		<label for="kedis">Kedis</label>
+		<div id="bloc"></div>
+			
+
+	</body>
+</html>

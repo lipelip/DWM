@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>transform</title>
+		<meta charset="UTF-8" />
+		<style>
+			body {
+				/* -webkit-transform-style: preserve-3d; */
+				/* -webkit-perspective: 100px; */
+			}
+			
+			@-webkit-keyframes rotate {
+				0% {-webkit-transform: rotateY(0deg);}
+				100% {-webkit-transform: rotateY(360deg);}
+			}
+			
+			div {
+				width: 100px;
+				height: 100px;
+				background: #BADA55;
+				line-height: 100px;
+				text-align: center;
+				margin: 0 auto;
+				
+				
+				transition:all .3s ease-out;
+				
+				/* -webkit-backface-visibility: visible; */
+				
+				/* -webkit-animation: rotate linear 3s infinite; */
+				
+			}
+			h1 {
+				font-size: 20px;
+				font-family: sans-serif;
+				color: green;
+			}
+			
+			
+			div:hover {
+				/* -webkit-transform: translateX(100px); */
+				/* -webkit-transform: translateY(100px); */
+				/* -webkit-transform: translateZ(50px); */
+				/* -webkit-transform: translate3D(100px, 100px, -50px); */
+				
+				cursor: pointer;
+			}
+						
+		</style>
+	</head>
+	<body>
+	
+		<div>
+			
+			<h1>BOB</h1>
+			
+		</div>
+			
+	</body>
+</html>

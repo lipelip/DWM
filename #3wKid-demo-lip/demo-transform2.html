@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>transform2</title>
+		<meta charset="UTF-8" />
+		<style>
+			body {
+				-webkit-perspective: 100px;
+			}
+			
+			@-webkit-keyframes rotate {
+				0% {-webkit-transform: rotateY(0deg);}
+				100% {-webkit-transform: rotateY(360deg);}
+			}
+			
+			div {
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				margin: 0 auto;
+				transition:all .3s ease-out;
+				-webkit-animation: rotate linear 3s infinite;
+				
+				position: relative;
+				-webkit-transform-style: preserve-3d; 
+			}
+			section {
+				background: #BADA55;
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				top: 0;
+				-webkit-backface-visibility: hidden;
+			}
+			section:nth-child(2){
+				-webkit-transform: rotateY(180deg);
+			}
+			
+			h1 {
+				font-size: 20px;
+				font-family: sans-serif;
+				color: green;
+				margin: 0;
+			}
+			
+		
+						
+		</style>
+	</head>
+	<body>
+	
+	
+		<div>
+		
+			<section><h1>BOB</h1></section>
+			<section><h1>AQRO</h1></section>
+			
+		</div>
+			
+	</body>
+</html>
