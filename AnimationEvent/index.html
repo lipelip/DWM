@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title>Animation Event</title>
+
+		<style type="text/css">
+
+		a {
+			text-decoration: none;
+			padding: 20px;
+			display: block;
+		}
+		
+		@-webkit-keyframes animation01 {
+			0% 		{ background: rgba(0,0,0,0); }
+			100% 	{ background: rgba(0,255,0,1);}
+		}
+
+		.animation01 a {
+			-webkit-animation: animation01 1s linear forwards;
+		}
+
+		</style>
+
+	</head>
+	<body>
+
+		<a id="kedis" href="page2.html">Lien qui déclenche une animation et change de page après</a>
+
+		<script type="text/javascript">
+
+			// Javascript
+			(function(){
+			
+				//l'element cliquable
+				var kedis = document.getElementById("kedis");
+				//le body
+				var body = document.body;
+				
+				//la fonction qui ouvre la nouvelle page quand l'animation est terminée
+				function kedisClick(e){
+					
+					body.addEventListener("webkitAnimationEnd",function(){
+						window.location = kedis.href;
+					});
+					
+					body.classList.add("animation01");
+					e.preventDefault();
+				}
+				
+				//le declencheur
+				kedis.addEventListener("click",kedisClick);
+				
+			})();
+
+		</script>
+
+	</body>
+</html>
