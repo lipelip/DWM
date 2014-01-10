@@ -1,0 +1,81 @@
+<html>
+<head>
+	<title>Regarde...</title>
+<style type="text/css">
+
+.container{
+	width: 1px;
+	height: 1px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	overflow: visible;
+}
+.pupille {
+	background: url(img/oeil-centre.png);
+	width: 54px;
+	height: 54px;
+	position: absolute;
+	left: -32px;
+	top: -27px;
+	-webkit-transition: left .2s ease-in-out;
+	-moz-transition: left .2s ease-in-out;
+	-O-transition: left .2s ease-in-out;
+	-ms-transition: left .2s ease-in-out;
+	transition: left .2s ease-in-out;
+}
+.overlay {
+	background: url(img/oeil-autour.png);
+	width: 238px;
+	height: 120px;
+	position: absolute;
+	left: -119px;
+	top: -60px;
+}
+.target1 {
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0%;
+	right: 80%;
+}
+.target {
+	position: absolute;
+	top:0;
+	bottom:0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+/*  zones sensibles  */
+.t1 { left:0%; right: 80%; }
+.t2 { left:20%; right: 60%; }
+.t3 { left:40%; right: 40%; }
+.t4 { left:60%; right: 20%; }
+.t5 { left:80%; right: 0%; }
+
+/* mouvements */
+.t1:hover ~ .container .pupille { left: -60px;}
+.t2:hover ~ .container .pupille { left: -41px;}
+.t4:hover ~ .container .pupille { left: -13px;}
+.t5:hover ~ .container .pupille { left: 8px;}
+
+</style>
+</head>
+<body>
+
+<div class="target t1"></div>
+<div class="target t2"></div>
+<div class="target t3"></div>
+<div class="target t4"></div>
+<div class="target t5"></div>
+
+<div class="container">
+	<div class="pupille"></div>
+	<div class="overlay"></div>
+</div>
+
+
+</body>
+</html>

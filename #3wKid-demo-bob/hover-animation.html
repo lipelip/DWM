@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+
+<title>Ceci est une page</title>
+
+<style>
+	
+body {
+	background-color: white;
+	color: white;
+	margin: 60px;
+	padding: 0px;
+	text-align: center;
+}
+
+
+.arthur:hover {
+	background: url(img/sheet2.png);
+	-webkit-animation: arthur .8s infinite;
+}
+
+.arthur {
+	display: inline-block;
+	width: 64px;
+	height: 92px;
+	background: url(img/stand.png);	
+}
+
+@-webkit-keyframes arthur {
+	0%, 16.65% { background-position: 0px 0px; }
+	16.66%, 33.32% { background-position: -64px 0px; }
+	33.33%, 49.99% { background-position: -128px 0px; }
+	50%, 66.65% { background-position: -192px 0px; }
+	66.66%, 83.32% { background-position: -256px 0px; }
+	83.33%, 100% { background-position: -320px 0px; }
+}
+
+</style>
+
+</head>
+
+<body >
+<div class="arthur"></div>
+</body>
+</html>

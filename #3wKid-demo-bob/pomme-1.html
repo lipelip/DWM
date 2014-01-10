@@ -1,0 +1,85 @@
+<html>
+<head>
+	<title>L'histoire d'une pomme</title>
+	<style>
+
+body {
+	background: white;
+	overflow: hidden;
+}
+
+.pomme {
+	background: url(img/pomme.jpg);
+	width: 312px;
+	height: 280px;
+	position: absolute;
+	left: -40px;
+	bottom: 20px;
+	-webkit-transition: all .4s ease-in-out;
+}
+
+.container {
+	width: 239px;
+	height: 400px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+	-webkit-transition: all .4s ease-in-out;
+}
+
+.langue {
+	background: url(img/langue.gif);
+	position: absolute;
+	width: 239px;
+	height: 400px;
+	left: 40px;
+	-webkit-transition: all .4s ease-out;
+}
+
+.tete {
+	background: url(img/tete.png);
+	position: absolute;
+	width: 239px;
+	height: 400px;
+}
+
+.machoire {
+	background: url(img/machoire.png);
+	width: 147px;
+	height: 73px;
+	position: absolute;
+	left: 23px;
+	top: 267px;
+	-webkit-transition: all .2s ease-out;
+	-webkit-transform-origin: 100% 0;
+}
+.yeux {
+	background: url(img/yeux.png);
+	width: 79px;
+	height: 79px;
+	position: absolute;
+	left: 32px;
+	top: 131px;
+	-webkit-transition: all .2s ease-out;
+	opacity: 0;
+}
+
+
+@media(max-width:500px){
+	.yeux {	opacity: 1;	}
+	.machoire {	-webkit-transform: rotateZ(-5deg); }
+	.langue {	left: -40px; }
+	.pomme { left: -80px ;}
+}
+	</style>
+</head>
+<body>
+	<div class="pomme"></div>
+	<div class="container">
+		<div class="langue"></div>
+		<div class="tete"></div>
+		<div class="machoire"></div>
+		<div class="yeux"></div>
+	</div>
+</body>
+</html>

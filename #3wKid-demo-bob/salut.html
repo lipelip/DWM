@@ -1,0 +1,61 @@
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	
+	body {
+		background: #fff2f6;
+	}
+	
+	.salut {
+		background: url(img/salut.png);
+		width: 369px;
+		height: 467px;
+		position: absolute;
+		bottom: 0px;
+		left: 30%;
+	}
+	.bras {
+		background: url(img/salut-bras.png);
+		width: 205px;
+		height: 338px;
+		position: absolute;
+		top: -100px;
+		left: -100px;
+		-webkit-transition: all .1s ease-in;
+		-webkit-transform-origin: 155px 280px;
+	}
+	.bulle {
+		background: url(img/salulle.png);
+		width: 220px;
+		height: 187px;
+		position: absolute;
+		top: -130px;
+		left: 200px;
+		-webkit-transform-origin: 50px 180px;
+		-webkit-transform: scale(0,0);
+		-webkit-transition: all .1s ease-in;
+	}
+
+	.salut:hover .bras {
+		-webkit-animation: salut .4s alternate infinite ease-in-out;
+	}
+	.salut:hover .bulle {
+		-webkit-transform: scale(1,1);
+		-webkit-transition: all .3s cubic-bezier(.66,1.48,.86,1.33);
+	}
+
+	@-webkit-keyframes salut {
+    	0% { -webkit-transform: rotate(-10deg); }
+    	100%{ -webkit-transform: rotate(20deg); }
+	}
+
+	</style>
+</head>
+<body>
+	<div class="salut">
+		<div class="bras"></div>
+		<div class="bulle"></div>
+	</div>
+</body>
+</html>
