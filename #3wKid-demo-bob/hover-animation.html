@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
+	<head>
+		<meta charset="utf-8" />
 
-<title>Ceci est une page</title>
+		<title>Ceci est une page</title>
 
-<style>
+		<style>
 	
 body {
 	background-color: white;
@@ -18,7 +18,7 @@ body {
 
 .arthur:hover {
 	background: url(img/sheet2.png);
-	-webkit-animation: arthur .8s infinite;
+	-webkit-animation: arthur .8s steps(1,end) infinite;
 }
 
 .arthur {
@@ -29,19 +29,19 @@ body {
 }
 
 @-webkit-keyframes arthur {
-	0%, 16.65% { background-position: 0px 0px; }
-	16.66%, 33.32% { background-position: -64px 0px; }
-	33.33%, 49.99% { background-position: -128px 0px; }
-	50%, 66.65% { background-position: -192px 0px; }
-	66.66%, 83.32% { background-position: -256px 0px; }
-	83.33%, 100% { background-position: -320px 0px; }
+	0% { background-position: 0px 0px; }
+	16.66% { background-position: -64px 0px; }
+	33.33% { background-position: -128px 0px; }
+	50% { background-position: -192px 0px; }
+	66.66% { background-position: -256px 0px; }
+	83.33% { background-position: -320px 0px; }
 }
 
-</style>
+		</style>
 
-</head>
+	</head>
 
-<body >
-<div class="arthur"></div>
-</body>
+	<body >
+		<div class="arthur"></div>
+	</body>
 </html>

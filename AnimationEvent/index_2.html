@@ -55,9 +55,9 @@
 				//la fonction qui ouvre la nouvelle page quand l'animation est terminée
 				function kedisClick(e){
 					
-					// body.addEventListener(ANIMATION_END,function(){
-					// 	window.location = kedis.href;
-					// });
+					body.addEventListener(ANIMATION_END,function(){
+						window.location = kedis.href;
+					});
 					
 					body.classList.add("animation01");
 					e.preventDefault();
