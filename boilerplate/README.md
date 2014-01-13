@@ -1,6 +1,6 @@
 #DWM - Tips&Tricks
 
-Hello world
+Boilerplate
 
 
 -------------
