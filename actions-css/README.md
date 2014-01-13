@@ -8,7 +8,7 @@ Ajout d'intéraction en CSS
 
 L'utilisation de `:hover` nous permet de mettre en place des interaction de base.
 
-> **voir** simple-hover.html & [salut.html](salut.html)
+> **voir** [simple-hover.html](simple-hover-1.html) & [salut.html](salut.html)
 
 ###target
 
@@ -22,7 +22,7 @@ Utilisation de la pseudo class `:target` pour le déplacement d'un objet.
 
 L'inconvéniant c'est que Le navigateur ne peut cibler qu'un élément à la fois, il n'est donc pas possible de mettre en place plusieurs interactions consécutives.
 
-> **voir** demo-deplacement.html
+> **voir** [demo-deplacement.html](demo-deplacement.html)
 
 ###Input checked (checkbox / radio)
 
@@ -36,12 +36,12 @@ Pour mettre en place plusieurs interactions consécutives sur une même page on 
 }
 ```
 
-> **voir** demo-deplacement2.html & demo-deplacement3.html
+> **voir** [demo-deplacement2.html](demo-deplacement2.html) & [demo-deplacement3.html](demo-deplacement3.html)
 
 Notez que les checkbox peuvent être cochées et/ou  décochées,
 si vous voulez empècher un utilisateur de décocher un input les boutons radio sont la solution.
 
-> **voir** demo-deplacement4.html
+> **voir** [demo-deplacement4.html](demo-deplacement4.html)
 
 -------------
 
