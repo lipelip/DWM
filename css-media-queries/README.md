@@ -1,6 +1,12 @@
 #DWM - Tips&Tricks
 
-Boilerplate
+#L'histoire d'une pomme
+
+C'est l'histoire d'un prédateur et d'une pomme. En media-queries.
+
+#PacMan
+
+Aidez PacMan à manger la boule.
 
 
 -------------
