@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>Deplacement</title>
+		<title>Déplacement - DWM - Tips&Tricks</title>
 		<meta charset="UTF-8" />
 		<style>
+			
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
 			
 			div {
 				width: 50px;
@@ -17,10 +23,10 @@
 				transition: all .4s linear;
 			}
 			
-			#kedis:target {
+			#demo:target {
 				-webkit-transform: translateX(100px);
 			}
-			#cheddar:target {
+			#test:target {
 				-webkit-transform: translateX(100px);
 			}
 			
@@ -28,20 +34,15 @@
 	</head>
 	<body>
 	
-		<a href="#kedis">Four</a>
-		<a href="#cheddar">Moulin</a>
+		<a href="#demo">Four</a>
+		<a href="#test">Moulin</a>
 	
-		<div id="kedis">K</div>
-		<div id="cheddar">C</div>
-			
-			
-		<!-- 
-			
-			utiliser un bouton target pour déplacer un élément
-			problème plus target retour de l'objet
-			pas de solution
-			
-		-->	
-			
+		<div id="demo">K</div>
+		<div id="test">C</div>
+	
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+		<script type="text/javascript">
+	
+		</script>	
 	</body>
 </html>

@@ -1,31 +1,26 @@
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
-		<title>Deplacement 3</title>
+		<title>Déplacement 2 - DWM - Tips&Tricks</title>
 		<meta charset="UTF-8" />
 		<style>
+			
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
 			
 			div {
 				width: 50px;
 				height: 50px;
 				background: #BADA55;
-				
-				position: absolute;
-				bottom: 100px;
-				left: 50px;
-				
 				transition: all .4s linear;
 			}
-			/*
-			#kedis:target {
-				-webkit-transform: translateX(100px);
-			}
-			*/
 
-			#kedis {
-				display: none;
-			}
-			#kedis:checked ~ #bloc {
+			#demo1:checked + 
+			#demo2:checked +
+			#demo3:checked ~ #bloc {
 				-webkit-transform: translateX(100px);
 			}
 			
@@ -33,51 +28,17 @@
 	</head>
 	<body>
 	
-		<input type="checkbox" id="kedis" />
+		<input type="checkbox" id="demo1" />
+		<input type="checkbox" id="demo2" />
+		<input type="checkbox" id="demo3" />
 	
-	
-		<label for="kedis">Kedis</label>
 		<div id="bloc"></div>
-			
-			
-		<!-- 
-			
-			utiliser un bouton target pour déplacer un élément
-			problème plus target retour de l'objet
-			pas de solution
-			
-		-->	
-			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-		<script>
-			
-			// Jquery
-			/*
-			$(document).ready(function(){
-			
-				$('label[for=kedis]').click(function(){
-					$('#kedis').prop('checked', true).prop('disabled', true);
-				});
-			
-			});
-			*/
-			
-			// Javascript
-			
-			(function(){
-			
-				var kedisLabel = document.querySelector("[for=kedis]");
-				var kedisInput = document.getElementById("kedis");
-				
-				function kedisClick(){
-					kedisInput.checked = true;
-					kedisInput.disabled = true;
-				}
-				
-				kedisLabel.addEventListener("click",kedisClick);
-				
-			})();
-			
-		</script> 
-
+		
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+		<script type="text/javascript">
+	
+		
+	
+		</script>	
 	</body>
 </html>

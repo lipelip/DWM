@@ -41,3 +41,9 @@ Comme tu es sympa, voici la liste complète des constantes disponibles (avec leu
 
 Ben après, c'est toi qui voit. Le truc, c'est que tu peux considérer key.js comme un point de départ, tu prends ce que tu veux dedans, tu modifies ce que tu veux aussi, et à toi la gloire.
 
+
+-------------
+
+_From the [DWM](http://dwm.re) team - [@pixeline](https://twitter.com/pixeline) [@boblemarin](https://twitter.com/boblemarin) [@lelipelip](https://twitter.com/lelipelip) [@aqro](https://twitter.com/aqro) [@remysaintcricq](https://twitter.com/remysaintcricq) [@fbourgaux](https://twitter.com/fbourgaux) [@chdelfosse](https://twitter.com/chdelfosse) [@teddytdk](https://twitter.com/teddytdk)_
+
+
