@@ -1,9 +1,9 @@
 #DWM - Tips&Tricks
 
-Grâce aux animations css et aux images sprite il est possible de créer des animations assez intéresantes.
-[Un bel exemple de notre amis google](http://www.google.com/doodles/martha-grahams-117th-birthday) créé à partir de cette image 
-![alt tag](sprites.jpg)
+Grâce aux animations css et aux images sprite il est possible de créer des animations assez intéresantes.  
+[Un bel exemple de notre amis google](http://www.google.com/doodles/martha-grahams-117th-birthday) créé à partir de cette image  
 
+![alt tag](img/sprites.jpg)
 
 
 -------------
