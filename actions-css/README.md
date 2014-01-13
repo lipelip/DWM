@@ -8,11 +8,11 @@ Ajout d'intéraction en CSS
 
 Utilisation de la pseudo class `:target` pour le déplacement d'un objet.
 
-`
-#demo:target {
+
+div#demo:target {
 	-webkit-transform: translateX(100px);
 }
-`
+
 
 L'inconvéniant c'est que Le navigateur ne peut cibler qu'un élément à la fois, il n'est donc pas possible de mettre en place plusieurs intéractions consécutives.
 
