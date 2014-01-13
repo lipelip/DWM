@@ -8,7 +8,7 @@ Ajout d'intéraction en CSS
 
 L'utilisation de `:hover` nous permet de mettre en place des interaction de base.
 
-> **voir** simple-hover.html & salut.html
+> **voir** simple-hover.html & [salut.html](salut.html)
 
 ###target
 
