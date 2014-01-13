@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Déplacement 2 - DWM - Tips&Tricks</title>
+		<meta charset="UTF-8" />
+		<style>
+			
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
+			
+			div {
+				width: 50px;
+				height: 50px;
+				background: #BADA55;
+				transition: all .4s linear;
+			}
+
+			#demo1:checked + 
+			#demo2:checked +
+			#demo3:checked ~ #bloc {
+				-webkit-transform: translateX(100px);
+			}
+			
+		</style>		
+	</head>
+	<body>
+	
+		<input type="checkbox" id="demo1" />
+		<input type="checkbox" id="demo2" />
+		<input type="checkbox" id="demo3" />
+	
+		<div id="bloc"></div>
+		
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+		<script type="text/javascript">
+	
+		
+	
+		</script>	
+	</body>
+</html>

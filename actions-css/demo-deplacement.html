@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Déplacement - DWM - Tips&Tricks</title>
+		<meta charset="UTF-8" />
+		<style>
+			
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
+			
+			div {
+				width: 50px;
+				height: 50px;
+				background: #BADA55;
+				
+				position: absolute;
+				bottom: 100px;
+				left: 50px;
+				
+				transition: all .4s linear;
+			}
+			
+			#demo:target {
+				-webkit-transform: translateX(100px);
+			}
+			#test:target {
+				-webkit-transform: translateX(100px);
+			}
+			
+		</style>
+	</head>
+	<body>
+	
+		<a href="#demo">Four</a>
+		<a href="#test">Moulin</a>
+	
+		<div id="demo">K</div>
+		<div id="test">C</div>
+	
+		<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+		<script type="text/javascript">
+	
+		</script>	
+	</body>
+</html>

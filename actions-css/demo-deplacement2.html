@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>Déplacement 3 - DWM - Tips&Tricks</title>
+		<meta charset="UTF-8" />
+		<style>
+			
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
+			
+			div {
+				width: 50px;
+				height: 50px;
+				background: #BADA55;
+				
+				position: absolute;
+				bottom: 100px;
+				left: 50px;
+				
+				transition: all .4s linear;
+			}
+
+			#demo {
+				display: none;
+			}
+			#demo:checked ~ #bloc {
+				-webkit-transform: translateX(100px);
+			}
+			
+		</style>		
+	</head>
+	<body>
+	
+		<input type="checkbox" id="demo" />
+	
+	
+		<label for="demo">Démo</label>
+		<div id="bloc"></div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			
+			// Jquery
+			/*
+			$(document).ready(function(){
+			
+				$('label[for=demo]').click(function(){
+					$('#demo').prop('checked', true).prop('disabled', true);
+				});
+			
+			});
+			*/
+			
+			// Javascript
+			
+			(function(){
+			
+				var demoLabel = document.querySelector("[for=demo]");
+				var demoInput = document.getElementById("demo");
+				
+				function demoClick(){
+					demoInput.checked = true;
+					demoInput.disabled = true;
+				}
+				
+				demoLabel.addEventListener("click",demoClick);
+				
+			})();
+			
+		</script> 
+
+	</body>
+</html>

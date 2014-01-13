@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title></title>
+
+		<!--
+		viewport:
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		webapp:
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon-precomposed" href="icon.png">
+		favicon:
+		<link rel="icon" href="img/favicon.ico">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		-->
+
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+			margin: 0;
+			background: url(max-blur.png);
+		}
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+		#gloupe {
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			top: 400px;
+			left: 400px;
+			border: 1px solid black;
+
+			background: url(max.png);
+
+			border-radius: 50%;
+			width: 200px;
+			height: 200px;
+
+			/* pour ne pas recevoir les événements souris et rien */
+			pointer-events: none;
+		}
+		
+
+		</style>
+
+	</head>
+	<body>
+
+		<div id="gloupe"></div>
+
+
+		<script type="text/javascript">
+
+		var div = document.getElementById("gloupe");
+		document.addEventListener("mousemove",function(e){
+			var px = e.pageX - 100;
+			var py = e.pageY - 100;
+			div.style.left = px + "px";
+			div.style.top = py + "px";
+			div.style.backgroundPosition = (-px) + "px " + (-py) + "px";
+		});
+	
+
+		</script>
+
+	</body>
+</html>
