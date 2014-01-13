@@ -8,6 +8,8 @@ To sharpen your fresh css+js skills, use / read / follow these online resources.
 - [css-tricks](http://css-tricks.com/)  : practical CSS tips and tricks, by Chris Coyler
 - [codepen](http://codepen.io/) : an online place to tryout code
 - [caniuseit](http://caniuse.com/) : check that CSS property against browser support
+- [greensock](http://www.greensock.com/gsap-js/) : GSAP: Professional-Grade HTML5 Animation library
+
 
 ###ADVANCED
 
