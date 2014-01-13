@@ -21,10 +21,14 @@
 
 		html, body {
 			height: 100%;
+			margin: 0;
+			background: url(max-blur.png);
 		}
 		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 		#gloupe {
+			margin: 0;
+			padding: 0;
 			position: absolute;
 			top: 400px;
 			left: 400px;
@@ -35,6 +39,9 @@
 			border-radius: 50%;
 			width: 200px;
 			height: 200px;
+
+			/* pour ne pas recevoir les événements souris et rien */
+			pointer-events: none;
 		}
 		
 
@@ -50,9 +57,11 @@
 
 		var div = document.getElementById("gloupe");
 		document.addEventListener("mousemove",function(e){
-			div.style.left = (e.pageX-100) + "px";
-			div.style.top = (e.pageY-100) + "px";
-			div.style.backgroundPosition = -e.pageX + "px" + " -" + e.pageY + "px";
+			var px = e.pageX - 100;
+			var py = e.pageY - 100;
+			div.style.left = px + "px";
+			div.style.top = py + "px";
+			div.style.backgroundPosition = (-px) + "px " + (-py) + "px";
 		});
 	
 
