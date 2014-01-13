@@ -1,11 +1,7 @@
 #DWM - Tips&Tricks
 
-<<<<<<< HEAD
-Get mouse position
-=======
-Boilerplate
->>>>>>> 50bdcf5e3ffc4b5d343ba57779603f057aa286ce
 
+Get mouse position
 
 -------------
 
