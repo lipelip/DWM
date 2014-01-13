@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>DWM - Tips&Tricks</title>
+		<meta charset="UTF-8" />
+		
+		<style>
+		
+			* { 
+				-moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; 
+				margin: 0;
+				padding: 0;
+			}
+		
+			html, body {
+				font-family: Arial, Helvetica, sans-serif;
+				width: 100%;
+				height: 100%;
+			}
+			label { display: block;}
+
+			
+			.stage { position: relative; width: 800px; height: 500px; margin: 20px auto; border: 1px solid black;}
+
+			#stage div { position: absolute; border-radius: 10px; }
+			
+			.square {
+				position: relative;
+				width: 100px;
+				height: 100px;
+				background: red;
+
+				top: 400px;
+				left: 100px;
+			}
+			#ground {
+				top: 500px;
+				left: 50px;
+				height: 2px;
+				width: 700px;
+				background: black;
+			} 
+			/*name duration timing-function delay iteration-count direction fill-mode play-state*/
+			.anim-jump-right 	{ -webkit-animation: JumpRight 		2s ease-in-out .3s infinite alternate forwards running; }
+			.anim-jump-left 	{ -webkit-animation: JumpLeft 		2s ease-in-out .3s infinite alternate forwards running; }
+			.anim-jump-turn 	{ -webkit-animation: JumpTurn 		1s ease-in-out .3s infinite alternate forwards running; }
+			.anim-wave 			{ -webkit-animation: Wave 			2s ease-in-out .3s infinite alternate forwards running; }
+
+
+			@-webkit-keyframes Jump {
+			  3%{ -webkit-transform : scaleX(1.2);  }
+			  10%{ -webkit-transform : scaleX(1); }
+			  50% {	top: 50px;  -webkit-transform : scaleX(1);  }
+			  89% {	-webkit-transform : scaleX(1); }
+			  90% {	top: 400px; -webkit-transform : scaleX(1); }
+			  94% {	-webkit-transform : scaleX(1.4); }
+			  100% {  -webkit-transform : scaleX(1); }
+			}
+
+			@-webkit-keyframes JumpRight {
+			  0%{
+			  	left: 100px;
+			    -webkit-transform: translateX(100px) rotate(0deg);
+			  }
+
+			  50% { top: 100px; }
+
+			  100% {
+			  	left: 600px;
+			    -webkit-transform: translateX(600px) rotate(180deg);
+			  }
+			}
+
+			@-webkit-keyframes JumpLeft {
+			  0%{
+			  	left: 600px;
+			    -webkit-transform: rotate(0deg);
+			  }
+
+			  50% {	top: 100px;  }
+
+			  100% {
+			  	left: 100px;
+			    -webkit-transform: rotate(180deg);
+			  }
+			}
+			@-webkit-keyframes JumpTurn {
+			  0%{
+			  	left: 100px;
+			    -webkit-transform: rotate(0deg);
+			  }
+
+			  50% {	top: 100px;  }
+
+			  100% {
+			  	left: 600px;
+			    -webkit-transform: rotate(720deg);
+			  }
+			}
+
+			@-webkit-keyframes Wave {
+			  0%{  top: 400px; left: 0%}
+			  25% {	top: 50px;  }
+			  50% {	top: 400px;  }
+			  75% { top: 100px;  }
+			  100% { top: 400px;  left: 100%;}
+			}
+
+		</style>
+		
+	</head>
+	<body>
+		
+		<div class="stage">
+			<div class="square anim-jump-left"></div>
+		</div>
+
+		<div class="stage">
+			<div class="square anim-jump-turn"></div>
+		</div>
+
+		<div class="stage">
+			<div class="square anim-wave"></div>
+		</div>
+
+		<div class="stage">
+			<div class="square anim-jump-right"></div>
+		</div>
+			
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
+	<script type="text/javascript">
+	
+		
+	
+	</script>	
+	</body>
+</html>

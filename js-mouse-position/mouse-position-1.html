@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8" />
+		<style type="text/css">
+			html, body {
+				font-family: Arial, Helvetica, sans-serif;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+
+		<p id="position">x : / y : </p>
+
+
+		<script type="text/javascript">
+			//get all the html we will update
+		    var position = document.getElementById("position"),
+		    body = document.body,
+
+		    //update function
+		    update = function(event){
+		        //write inside the html
+		        position.innerHTML = "x : " + event.clientX +" / y : "+event.clientY;
+		    }
+
+
+		    body.addEventListener("mousemove", update, false);
+		
+		</script>
+	</body>
+</html>
