@@ -2,34 +2,34 @@
 
 ##Actions CSS
 
-Ajout d'intéraction en CSS 
+Ajout d'intÃ©raction en CSS 
 
 ###target
 
-Utilisation de la pseudo class `:target` pour le déplacement d'un objet.
+Utilisation de la pseudo class `:target` pour le dÃ©placement d'un objet.
 
-
-div#demo:target {
+```
+#demo:target {
 	-webkit-transform: translateX(100px);
 }
+```
 
-
-L'inconvéniant c'est que Le navigateur ne peut cibler qu'un élément à la fois, il n'est donc pas possible de mettre en place plusieurs intéractions consécutives.
+L'inconvÃ©niant c'est que Le navigateur ne peut cibler qu'un Ã©lÃ©ment Ã  la fois, il n'est donc pas possible de mettre en place plusieurs interactions consÃ©cutives.
 
 ###Input checked (checkbox / radio)
 
-Pour mettre en place plusieurs intéractions consécutives sur une même page on peut utiliser les input (checkbox ou radio).
+Pour mettre en place plusieurs interactions consÃ©cutives sur une mÃªme page on peut utiliser les input (checkbox ou radio).
 
-`
+```
 #demo1:checked + 
-#demo2:checked +
+#demo2:checked + 
 #demo3:checked ~ #bloc {
 	-webkit-transform: translateX(100px);
 }
-`
+```
 
-Notez que les checkbox peuvent être cochées et/ou décochées,
-si vous voulez empécher un utilisateur de décocher un input les boutons radio sont la solution.
+Notez que les checkbox peuvent Ãªtre cochÃ©es et/ou  dÃ©cochÃ©es,
+si vous voulez empÃ¨cher un utilisateur de dÃ©cocher un input les boutons radio sont la solution.
 
 
 -------------
