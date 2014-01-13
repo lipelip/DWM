@@ -1,7 +1,20 @@
-#DWM - Tips&Tricks
+#Scroll Events
 
-Boilerplate
+Grâce à l'événement scroll, on peut savoir combien de pixels ont déjà disparu au sommet de l'écran.
 
+Du coup, ça permet d'en profiter pour faire le malin.
+
+Par exemple, mettre un titre.
+
+#Un Titre
+
+Puis, on peut afficher la position (comme dans l'exemple simple.html), mais ça ne sert à rien, en général.
+
+Du coup, on devrait s'en servir pour faire totalement autre chose, comme faire avancer une histoire, scroller horizontalement par esprit de contradiction, ou faire des prouts comme avec FartScroll.js.
+
+Bref, qu'est-ce qu'on s'amuse
+
+#oui
 
 -------------
 
