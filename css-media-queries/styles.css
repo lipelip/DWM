@@ -1,0 +1,220 @@
+/* aniation des deux demi-cercles de pacman */
+@keyframes eatup {
+	0% 	{ transform: rotate(0deg); }
+	50% 	{ transform: rotate(45deg); }
+	100% 	{ transform: rotate(0deg); }
+}
+@-webkit-keyframes eatup {
+	0% 	{ -webkit-transform: rotate(0deg); }
+	50% 	{ -webkit-transform: rotate(45deg); }
+	100% 	{ -webkit-transform: rotate(0deg); }
+}
+	.eatup { -webkit-animation: eatup .5s infinite ease-in-out; animation: eatup .5s infinite ease-in-out; }
+
+@keyframes eatdown {
+	0% 	{ transform: rotate(0deg); }
+	50% 	{ transform: rotate(-45deg); }
+	100% 	{ transform: rotate(0deg); }
+}
+@-webkit-keyframes eatdown {
+	0% 	{ -webkit-transform: rotate(0deg); }
+	50% 	{ -webkit-transform: rotate(-45deg); }
+	100% 	{ -webkit-transform: rotate(0deg); }
+}
+	.eatdown { -webkit-animation: eatdown .5s infinite ease-in-out; animation: eatdown .5s infinite ease-in-out; }
+
+/* rotation de pac man mort et des demi-cercles */
+@keyframes pacmandead {
+	0%		{ transform: rotate(45deg); 	}
+	100%	{ transform: rotate(90deg); }
+}
+@keyframes eatupdead {
+	0% 	{ transform: rotate(45deg); }
+	70% 	{ transform: rotate(90deg); opacity: 1; }
+	100%	{ transform: rotate(90deg); opacity: 0; }
+
+}
+@keyframes eatdowndead {
+	0% 	{ transform: rotate(-45deg); }
+	70% 	{ transform: rotate(-90deg); opacity: 1; }
+	100% 	{ transform: rotate(-90deg); opacity: 0; }
+}
+@-webkit-keyframes pacmandead {
+	0%		{ -webkit-transform: rotate(45deg); 	}
+	100%	{ -webkit-transform: rotate(90deg); }
+}
+@-webkit-keyframes eatupdead {
+	0% 	{ -webkit-transform: rotate(45deg); }
+	70% 	{ -webkit-transform: rotate(90deg); opacity: 1; }
+	100%	{ -webkit-transform: rotate(90deg); opacity: 0; }
+
+}
+@-webkit-keyframes eatdowndead {
+	0% 	{ -webkit-transform: rotate(-45deg); }
+	70% 	{ -webkit-transform: rotate(-90deg); opacity: 1; }
+	100% 	{ -webkit-transform: rotate(-90deg); opacity: 0; }
+}
+
+/* animation des yeux */
+@-webkit-keyframes iris {
+	0% 	{ -webkit-transform: translateX(0); }
+	50% 	{ -webkit-transform: translateX(10px); }
+	100% 	{ -webkit-transform: translateX(0); }
+}
+@-webkit-keyframes iris {
+	0% 	{ -webkit-transform: translateX(0); }
+	50% 	{ -webkit-transform: translateX(10px); }
+	100% 	{ -webkit-transform: translateX(0); }
+}
+	.iris { -webkit-animation: iris 1.5s infinite ease-in-out; animation: iris 1.5s infinite ease-in-out; }		
+
+
+
+body {
+	background: #111;
+	overflow-y: hidden;
+}
+/* PACMAN */
+#pacman {
+	position: absolute;
+	right: 30%;
+	bottom: 50%; margin-bottom: -45px;
+	z-index: 20;
+	transition: all 2s linear;
+	-webkit-transition: all 2s linear;
+}
+
+#top {
+	background: yellow;
+	border-radius: 90px 90px 0 0;
+	height: 45px;
+	width: 90px;
+	transform-origin: center bottom;
+	-webkit-transform-origin: center bottom;
+}
+#bottom {
+	background: yellow;
+	border-radius: 0 0 90px 90px;
+	height: 45px;
+	width: 90px;
+	transform-origin: center top;
+		-webkit-transform-origin: center top;
+}
+
+/*MECHANT*/
+#mechant { 
+	 height: 90px; width: 90px;
+	 position: absolute;
+	 left: 50%; margin-left: -45px;
+	 top: 50%; margin-top: -45px;
+	 transition: all 2s linear;
+	 -webkit-transition: all 2s linear;
+}
+	#mechant .mort {
+		width: 50px;
+		height: 5px;
+		background: red;
+		content: "";
+		bottom: 25px;
+		left: 15px;
+		z-index: 200;
+		position: absolute;
+		transition: all .2s linear;
+	 -webkit-transition: all .2s linear;
+	 opacity: 0;
+	}
+#tete { height: 70px; background: cyan; width: 90px; border-radius: 50px 50px 0 0; }
+	.eyes { 
+		width: 20px; height: 20px; border-radius: 10px;
+		background: #fff; 
+		position: absolute;
+		top: 20px; left: 15px;
+		}
+	.eyes + .eyes { left: 45px; }
+	.iris {
+		width: 10px; height: 10px; border-radius: 5px;
+		background: #000; 
+		top: 5px;
+		position: absolute;
+	}		
+.boule { width: 26px; height: 26px; background: cyan; border-radius: 13px; position: absolute; bottom: 5px; }
+	.boule + .boule { left: 21px; }
+	.boule + .boule + .boule { left: 42px; }
+	.boule + .boule + .boule + .boule { left: 64px; }
+
+.pacbouffe {
+	width: 30px; height: 30px; border-radius: 15px;
+	background: #FFF;
+	position: absolute;
+	bottom: 50%; margin-bottom: -15px;
+	left: 30%;
+	transition: all 2s linear;
+	-webkit-transition: all 2s linear;
+}
+							
+/* Pour attrapper la pacbouffe */			
+@media (max-height : 500px) {
+	#mechant { top: 20%; }
+	.pacbouffe, #pacman { bottom: 20%; }
+}
+			
+/* mort de pacman */			
+@media (max-width : 662px) and (min-height: 501px) {
+
+	#pacman {
+		animation: pacmandead .6s linear .3s;	
+		animation-fill-mode: forwards;
+		
+		-webkit-animation: pacmandead .6s linear .3s;	
+		-webkit-animation-fill-mode: forwards;
+	}
+	#top {
+		animation: eatupdead .6s linear .8s;	
+		animation-fill-mode: both;
+		
+		-webkit-animation: eatupdead .6s linear .8s;	
+		-webkit-animation-fill-mode: both;
+	}
+	#bottom {
+		animation: eatdowndead .6s linear .8s;	
+		animation-fill-mode: both;
+		
+		-webkit-animation: eatdowndead .6s linear .8s;	
+		-webkit-animation-fill-mode: both;
+	}	
+}
+
+/* victoire de pacman */			
+@media (max-height : 501px) and (max-width: 400px) {
+	
+	#pacman {
+		-webkit-transform: translateX(-100px);
+		transform: translateX(-100px);		
+	}
+	.pacbouffe {
+		transform: scale(0);
+		transition-duration: .4s;
+		transition-delay: 2s;
+		
+		-webkit-transform: scale(0);
+		-webkit-transition-duration: .4s;
+		-webkit-transition-delay: 2s;
+	}
+	#tete, .boule {
+		background: #FFF;
+		-webkit-transition-delay: 2s;
+		transition-delay: 2s;
+	}
+	.eyes, .iris { background: red; -webkit-transition-delay: 2s; transition-delay: 2s; }
+	#mechant {
+		left: -150%;
+		-webkit-transition-delay: 2s;
+		transition-delay: 2s;
+	}
+	#mechant .mort {
+		opacity: 1;
+		transition-delay: 1s;
+		-webkit-transition-delay: 2s;
+	}
+	
+}
