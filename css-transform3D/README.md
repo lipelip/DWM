@@ -1,6 +1,10 @@
 #DWM - Tips&Tricks
 
-Boilerplate
+Pour contrôler les transformations 3D en css il faut mettre en place le contexte avec un `transform-style: preserve-3d;` sur le parent et mettre en place une perspective `perspective: 100px;`.
+
+Dans l'exemple [demo-transform2.html](demo-transform2.html) la propriété `backface-visibility: hidden;` (par défaut réglée sur visible) nous permet de masquer l'arrière d'un élément lors de la rotation.
+
+Un bon exemple externe > http://rupl.github.io/unfold/
 
 
 -------------
