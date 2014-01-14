@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="HandheldFriendly" content="True">
+		
+		<title></title>
+
+		<!--
+		viewport:
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		webapp:
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<link rel="apple-touch-icon-precomposed" href="icon.png">
+		favicon:
+		<link rel="icon" href="img/favicon.ico">
+		<link rel="icon" type="image/png" href="img/favicon.png">
+		-->
+
+		<style type="text/css">
+
+		html, body {
+			height: 100%;
+		}
+		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+
+		#step1div {
+			opacity: 0;
+			-webkit-transition: opacity .5s linear;
+		}
+		body.step1 #step1div {
+			opacity: 1;
+		}
+
+
+
+		#step2div {
+			-webkit-transform: translateX( -300px );
+			-webkit-transition: all .5s ease-out;
+		}
+		body.step2 #step2div {
+			-webkit-transform: translateX( 0px );
+		}
+
+		</style>
+
+	</head>
+	<body>
+
+<div id="step1div">Etape 1 was here</div>
+<div id="step2div">Etape 2 FTW</div>
+
+
+		<script type="text/javascript">
+var compteur = 0;
+
+document.addEventListener("keydown",function(e){
+	compteur = compteur + 1;
+	document.body.classList.add("step" + compteur);
+	// if ( compteur == 5 ) {
+	// 	window.location.href = 'nouvellepage.html';
+	// }
+});
+		</script>
+
+	</body>
+</html>
