@@ -23,7 +23,12 @@
 			height: 100%;
 		}
 		* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
+		body {
+			text-align: center;
+			font-size: 3em;
+			padding-top: 200px;
+			font-family: Helvetica;
+		}
 
 
 		#step1div {
@@ -37,10 +42,12 @@
 
 
 		#step2div {
-			-webkit-transform: translateX( -300px );
-			-webkit-transition: all .5s ease-out;
+			opacity: 0;
+			-webkit-transform: translateY( 200px ) rotateX(-90deg);
+			-webkit-transition: all .8s ease-out;
 		}
 		body.step2 #step2div {
+			opacity: 1;
 			-webkit-transform: translateX( 0px );
 		}
 
