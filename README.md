@@ -12,9 +12,12 @@ To sharpen your fresh css+js skills, use / read / follow these online resources.
 
 
 ###ADVANCED
-
+- [tympanus's Codrops](http://tympanus.net/codrops/) : advanced tutorials involving CSS3, html5 and whisky.
 - [html5rocks](http://updates.html5rocks.com/2014/01/Chrome-Dev-Summit-Performance-Summary) : because performance matters.
 
+###NINJA
+
+- [xkcd](http://xkcd.com/) : you now see the matrix, and the irony of it.
 
 -------------
 
