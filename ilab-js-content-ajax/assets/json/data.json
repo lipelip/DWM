@@ -1,0 +1,14 @@
+{
+  "accueil": {
+    "titre": "Accueil",
+    "texte": "le contenu de la page d'accueil"
+  },
+  "profil": {
+    "titre": "Profil",
+    "texte": "le contenu de la page profil"
+  },
+  "badges": {
+    "titre": "Badges",
+    "texte": "le contenu de la page badges"
+  }
+}

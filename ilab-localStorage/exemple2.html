@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>DWM - Tips&Tricks</title>
+		<meta name="apple-mobile-web-app-title" content="DWM - Tips&Tricks">
+		<meta charset="UTF-8" />
+		
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta name="viewport" content="user-scalable=no, initial-scale=1.0">
+		
+		<!-- ICON -->
+		<!-- iPhone non-retina 57x57 -->
+		<link rel="apple-touch-icon" href="assets/img/icon57.png"/>
+		<!-- iPhone retina 114x114 -->
+		<link rel="apple-touch-icon" sizes="114x114" href="assets/img/icon114.png"/>
+		
+		<!-- Startup image -->
+		<!-- iPhone standard resolution 320x460  (landscape not needed because all web apps start portrait on iPhone) -->
+		<link  rel="apple-touch-startup-image" href="assets/img/splash-320x460.jpg" media="(device-width: 320px)" />
+		<!-- iPhone 4/4s high resolution (retina) 640x920 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+		<link rel="apple-touch-startup-image" href="assets/img/splash-640x920.jpg" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" />
+		<!-- iPhone 5 high resolution (retina) 640x1096 pixels (landscape not needed because all web apps start portrait on iPhone) -->
+		<link rel="apple-touch-startup-image" href="assets/img/splash-640x1096.jpg" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+		
+		<!-- JS -->
+		<script defer src="assets/js/fastclick.js"></script>
+		<!-- https://github.com/ftlabs/fastclick -->
+		
+		<script defer src="assets/js/app2.js"></script>
+		
+		<link rel="stylesheet" href="assets/css/styles.css">		
+		
+	</head>
+	<body>
+	
+		<section>
+		
+			<h1>LocalStorage</h1>
+			<p>New user or returning user ?</p>
+			
+			<div id="accueil" class="new-user">
+				
+				N'oubliez pas de remplir
+				<button id="button">votre profil</button>
+				
+				<form id="form" class="hide" onsubmit="storeUser(event);">
+				
+					<input id="username" type="text" />
+					<input type="submit" class="submit" value="ok"/>
+				
+				</form>
+				
+				
+			</div>
+			
+		</section>
+	
+	</body>
+</html>

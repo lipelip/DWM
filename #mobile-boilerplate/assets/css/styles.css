@@ -1,0 +1,4 @@
+/* The following CSS prevents Safari from changing the font size when the device is rotated - you may or may not need this */
+body, html {
+	-webkit-text-size-adjust: 100%; /* prevents text size from changing on orientation change */
+}
