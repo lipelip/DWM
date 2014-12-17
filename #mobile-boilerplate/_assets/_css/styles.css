@@ -1,4 +1,18 @@
+@import url(normalize.css);	/* v3.0.2 */
+@import url(cf.css);
+/*
+@import url(fonts.css);
+*/
+
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
 /* The following CSS prevents Safari from changing the font size when the device is rotated - you may or may not need this */
 body, html {
 	-webkit-text-size-adjust: 100%; /* prevents text size from changing on orientation change */
 }
+
+/* Your Style */
+
