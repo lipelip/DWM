@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Street View Image</title>
+	<style type="text/css">
+		body, html { font-family: Arial, helvetica, sans-serif; }
+		b { color : red; }
+		#image {
+			border : 1px solid #555;
+		}
+		
+	</style>
+<body>
+
+	<!-- si ça ne marche plus : https://developers.google.com/maps/documentation/streetview/#api_key -->
+
+	<h1>Street View Image</h1>
+
+	<p>Aller chercher les coodonées ( latitude , la longitude) de l'adresse sur google maps dans l'url de la page 
+		<br>ex : <i>https://www.google.be/maps/place/50%C2%B027'53.6%22N+4%C2%B052'35.9%22E/@<b>50.4649,4.876626</b>,285m/data=!3m2!1e3!4b1!4m2!3m1!1s0x0:0x0</i>
+	</p>
+
+	<img id="image" src="" alt="">
+	
+	<p>
+		Lien vers l'image : <a id="link" href="#" title="">Link to the picture</a>
+	</p>
+
+	<script type="text/javascript" src="app.js"></script>
+
+</body>
+</html>
