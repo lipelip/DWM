@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<title>hammer swipe demo</title>
+		<meta name="apple-mobile-web-app-title" content="DWM - Tips&Tricks">
+		<meta charset="UTF-8" />
+		
+		<meta content="yes" name="apple-mobile-web-app-capable"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
+
+		<style type="text/css" >
+			html, body { width: 100%; height: 100%; overflow: hidden; margin : 0;  }
+			body > div { display: table; width: 100%; height: 100%;}
+			body > div > div {
+				display : table-cell;
+				vertical-align: middle;
+				text-align: center;
+				font-family: Arial;
+				font-size: 50px;
+				background-color : silver;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div>
+			<div id="element" >You can't touch this !</div>
+		</div>
+		
+
+		<script>
+			var element = document.getElementById('element');
+
+		    function startTap(event) {
+		        element.innerHTML = "Ah ! Je suis touché !";
+		    }
+		    //ici on va recevoir un evènement avec un tableau qui contient le nombre de doigts qu'on a mit sur la surface, [0] désigne le premier doigt
+		    function moveTap(event) {
+		    	//console.log(event)
+		        element.innerHTML = "X :" + 
+		        					event.touches[0].pageX + 
+		        					"<br> Y : " + 
+		        					event.touches[0].pageY;
+		        //empêche le comportement par défaut, sur IOS empêche de drag and dropper le body
+		    	event.preventDefault(); 					
+		    }
+
+		    //arrive quand on a mit trop de doigt ou que le device perd le focus
+		    function cancelTap(event) {
+		         element.innerHTML = "Je n'arrives plus à suivre";
+		    }
+
+		    function endTap(event) {
+		         element.innerHTML = "Tu a enlevé ton doigt";
+		    }
+
+		    //attention a touchStart et click
+		    function handleClick(event) {
+		        element.innerHTML = "tu a cliqué";
+		    }
+
+		    element.addEventListener("click", handleClick);
+
+		    element.addEventListener("touchstart", startTap);
+		    element.addEventListener("touchcancel", cancelTap);
+		    element.addEventListener("touchmove", moveTap);
+		    element.addEventListener("touchleave", cancelTap);
+		    element.addEventListener("touchend", endTap);
+		
+function preventBehavior(e) {
+    e.preventDefault(); 
+};
+
+document.addEventListener("touchmove", preventBehavior, false);
+
+		</script>
+	</body>
+</html>
