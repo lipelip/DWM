@@ -35,8 +35,6 @@
 				height: 100%;
 				display : block;
 				position: absolute;
-				-webkit-transition: -webkit-transform .5s;
-    			transition: transform .5s;
 			}
 			#swipe #left, #swipe #right { 
 				width: 50%; 
@@ -50,41 +48,16 @@
 				position: absolute; 
 				width: 100%; 
 				height: 100%;
-				top : 40%;
+				top : 0%;
 				text-align: center;
+				pointer-events:none;
 			}
 			#left { 
 				background : green;
-				-webkit-transform : translate(-98%, 0);
-				transform : translate(-98%, 0);
 			}
 
-			#right { 
-				background : blue; 
-				right: 0;
-				-webkit-transform : translate(98%, 0);
-				transform : translate(98%, 0);
-			}
-
-			#up { 
-				background : yellow; 
-				-webkit-transform : translate(0, -98%);
-				transform : translate(0, -98%);
-			}
-
-			#down { 
-				background : red; 
-				bottom: 0;
-				-webkit-transform : translate(0, 98%);
-				transform : translate(0, 98%);
-			}
-
-			#left.active, 
-			#right.active,
-			#up.active, 
-			#down.active { 
-				-webkit-transform : translate(0, 0); 
-				transform : translate(0, 0); 
+			#left.active { 
+				background : red;
 			}
 
 		</style>
@@ -92,11 +65,8 @@
 	<body>
 	
 		<div id="swipe">
-			<p>swipez</p>
+			<p>faire glisser le bord vert</p>
 			<div id="left"></div>
-			<div id="right"></div>
-			<div id="up"></div>
-			<div id="down"></div>
 		</div>
 
 		<script src="lib/jquery-1.11.2.min.js"  type="text/javascript"></script>
@@ -109,57 +79,66 @@
 
 			$(document).ready(function() {
 
-				var $swipeElement = $('#swipe');
+				var $panElement = $('#left');
+				//récupérer la taille de notre élément
+				var elementWidth = $panElement.width();
+
+				var originalPositionX = 20 - elementWidth; // laisse 20 pixels de bord pour qu'on puisse attraper l'élément
+				var currentPosition = originalPositionX;
+
+				$panElement.css('-webkit-transform',"translate("+originalPositionX+"px,0)");
 
 				/* 
 				le swipe vertical n'étant pas activé par défaut il faut l'activer 
 				http://hammerjs.github.io/recognizer-swipe/
 				*/
 
-				$swipeElement.hammer().data("hammer").get("swipe").set({ direction: Hammer.DIRECTION_ALL });
+				$panElement.hammer().data("hammer").get("pan");
 
 				//d'abord on met hammer() et ensuite en écoute l'évènement on()
 				//les options ne sont pas obligatoires
 				var options = {
 					pointers : 1, //nombre de doigts pour activer l'évènement
 					threshold : 2, //distance minimal avant le reconaissance de l'évènement
-					velocity : .4 //vécolocité minimale avant le reconaissance de l'évènement
 				}
+				$panElement.hammer(options).on("panright", function(e){
+					//pour qu'on aie l'impression que le mouvement se fait à partir du bord droit	
+					currentPosition = e.gesture.deltaX - elementWidth;
 
-				$swipeElement.hammer(options).on("swiperight", function(e){
-					if($('#right').hasClass("active")){
-						$('#right').removeClass("active");
-					} else {
-						$('#left').addClass("active");
-					}
+					if( currentPosition <= 0){
+						$(this).css('-webkit-transform',"translate("+currentPosition+"px,0)");
+					} 
+
 				});
 
-				$swipeElement.hammer(options).on("swipeleft", function(e){
-					if($('#left').hasClass("active")){
-						$('#left').removeClass("active");
-					} else {
-						$('#right').addClass("active");
-					}
-				});
-				
-				$swipeElement.hammer(options).on("swipeup", function(e){
-					if($('#up').hasClass("active")){
-						$('#up').removeClass("active");
-					} else {
-						$('#down').addClass("active");
-					}
+				$panElement.hammer(options).on("panleft", function(e){
+					//ici le mouvement se fait à partir du bord gauche
+					currentPosition = e.gesture.deltaX;
+
+					if( currentPosition > originalPositionX){
+						$(this).css('-webkit-transform',"translate("+currentPosition+"px,0)");
+					} 
 				});
 
+				$panElement.hammer(options).on("panend", function(e){
 
-				$swipeElement.hammer(options).on("swipedown", function(e){
-					if($('#down').hasClass("active")){
-						$('#down').removeClass("active");
-					} else {
-						$('#up').addClass("active");
-
+					//pan right
+					if(e.gesture.direction == 4){
+						$panElement.css('-webkit-transform',"translate("+0+"px,0)");
 					}
+					//pan left
+					if(e.gesture.direction == 2){
+						$panElement.css('-webkit-transform',"translate("+originalPositionX+"px,0)");
+					}
+					//on met une transition à la fin de l'évènement et on attends qu'il se finisse pour le retirer ce qui nous permet de recommencer le pan sans transition
+					$panElement
+						.css("-webkit-transition", "transform .5s")
+
+						.one("webkitTransitionEnd mozTransitionEnd MSTransitionEnd otransitionend transitionend", function(){
+							$panElement.css("-webkit-transition", "none");
+						});
 				});
-				
+
 
 			})
 

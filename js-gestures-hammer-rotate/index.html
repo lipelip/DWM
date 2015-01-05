@@ -48,16 +48,15 @@
 		<script>
 
 			$(document).ready(function() {
-				//empêche IOS de bouger le body
-				$('body').on('touchmove', function (e) {
-				    e.preventDefault();
-				 });
+				//empêche le document de bouger sur IOS
+				document.addEventListener("touchmove", function(e){
+					e.preventDefault(); 
+				}, false);
 
 				var $element = $('#element');
-				//il faut dire a hammer.js qu'on va utiliser le pinch, on peu rajouter d'autres gestures dans le tableau
-				var rotate = new Hammer.Rotate();
 
-				$element.hammer().data("hammer").add([rotate]);
+				//il faut dire a hammer.js qu'on va utiliser la rotatation
+				$element.hammer().data("hammer").get("rotate").set({ enable: true });
 
 				$element.bind("rotate", function(e){
 					$('#element').css('-webkit-transform',"rotate("+e.gesture.rotation+"deg)");

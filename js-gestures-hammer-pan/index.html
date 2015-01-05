@@ -44,10 +44,10 @@
 		<script>
 
 			$(document).ready(function() {
-				//empêche IOS de bouger le body
-				$('body').on('touchmove', function (e) {
-				    e.preventDefault();
-				 });
+				//empêche le document de scroller sur IOS
+				document.addEventListener("touchmove", function(e){
+					e.preventDefault(); 
+				}, false);
 
 				//d'abord on met hammer() et ensuite en écoute l'évènement on()
 
